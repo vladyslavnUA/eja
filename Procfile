@@ -1,1 +1,1 @@
-web: python manage.py migrate && gunicorn ejamain.wsg
+web: gunicorn ejamain.wsgi --log-file -
