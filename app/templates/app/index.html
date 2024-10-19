@@ -1,0 +1,1387 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <!--==============================
+     Preloader
+    ==============================-->
+    <div class="preloader ">
+        <div class="preloader-inner">
+            <span class="loader"></span>
+        </div>
+    </div>
+  <!--==============================
+    Mobile Menu
+    ============================== -->
+    <div class="mobile-menu-wrapper">
+        <div class="mobile-menu-area">
+            <div class="mobile-logo">
+                <a href="index.html"><img src="{% static 'logo.png' %}" style="border-radius: 15px;" alt="EJA Studio"></a>
+                <button class="menu-toggle"><i class="fa fa-times"></i></button>
+            </div>
+            <div class="mobile-menu">
+                <ul>
+                <li>
+                    <a href="{% url 'home' %}">home</a>
+                </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#">Pages</a>
+                        <ul class="sub-menu">
+                            <li><a href="team.html">Team Page</a></li>
+                            <li><a href="team-details.html">Team Details</a></li>
+                            <li><a href="shop.html">Shop Page</a></li>
+                            <li><a href="shop-details.html">Shop Details</a></li>
+                            <li><a href="cart.html">cart</a></li>
+                            <li><a href="checkout.html">Checkout</a></li>
+                            <li><a href="wishlist.html">Wishlist</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#">Shop</a>
+                        <ul class="sub-menu">
+                            <li><a href="shop.html">Shop</a></li>
+                            <li><a href="shop-details.html">Shop Details</a></li>
+                            <li><a href="cart.html">cart</a></li>
+                            <li><a href="checkout.html">Checkout</a></li>
+                            <li><a href="wishlist.html">Wishlist</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#">Blog</a>
+                        <ul class="sub-menu">
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="blog-details.html">Blog Details</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--==============================
+	Header Area
+    ==============================-->
+    <header class="nav-header header-layout">
+        <!-- <div class="header-top">
+            <div class="container">
+                <div class="row justify-content-center justify-content-md-between align-items-center gy-2">
+                    <div class="col-auto d-none d-lg-block">
+                        <div class="header-logo">
+                            <a href="index.html"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
+                        </div>
+                    </div>
+                    <div class="col-auto d-none d-md-block">
+                        <nav class="main-menu d-none d-lg-inline-block">
+                            <ul>
+                                <li>
+                                    <a href="index.html">Home</a>
+                                </li>
+                                <li>
+                                    <a href="about.html">About Us</a>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="#">Team</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="team.html">Team Page</a></li>
+                                        <li><a href="team-details.html">Team Details</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="#">Shop</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="shop.html">Shop Page</a></li>
+                                        <li><a href="shop-details.html">Shop Details</a></li>
+                                        <li><a href="cart.html">cart</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="#">Blog</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="blog.html">Blog Page</a></li>
+                                        <li><a href="blog-details.html">Blog Details</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="#">Pages</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="team.html">Team Page</a></li>
+                                        <li><a href="team-details.html">Team Details</a></li>
+                                        <li><a href="shop.html">Shop Page</a></li>
+                                        <li><a href="shop-details.html">Shop Details</a></li>
+                                        <li><a href="cart.html">cart</a></li>
+                                        <li><a href="checkout.html">Checkout</a></li>
+                                        <li><a href="wishlist.html">Wishlist</a></li>
+                                    </ul>
+                                </li>                                    
+                                <li>
+                                    <a href="contact.html">Contact</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="navbar-right d-inline-flex d-lg-none">
+                            <button type="button" class="menu-toggle icon-btn"><i class="fas fa-bars"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <div class="navbar-right-desc">
+                            <div class="icon">
+                                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.625 0C5.375 0 0 2.875 0 6.25V7.125C0 8 0.75 8.625 1.625 8.75H4.875C6 8.75 6.625 7.375 6.25 6.25C5.625 5.375 6.25 4.125 7.25 3.875C10.75 3.125 14.25 3.125 17.875 3.875C19 4.125 19.5 5.25 18.875 6.25C18.5 7.375 19.125 8.625 20.25 8.75H23.5C24.375 8.75 25.125 8 25.125 7.125V6.25C25 2.75 19.5 0 12.625 0Z" fill="var(--theme-color)"/>
+                                    <path d="M19.125 9.375C18.875 9 18.5 8.75 18 8.75H16.25V6.875C16.25 6.5 16 6.25 15.625 6.25H14.375C14 6.25 13.75 6.5 13.75 6.875V8.75H11.25V6.875C11.25 6.5 11 6.25 10.625 6.25H9.375C9 6.25 8.75 6.5 8.75 6.875V8.75H7C6.5 8.75 6.125 9 5.875 9.375C4 12.625 1.25 16.75 1.25 23.75C1.25 24.375 1.75 25 2.5 25H22.5C23.25 25 23.75 24.375 23.75 23.75C23.75 16.75 20.875 12.375 19.125 9.375ZM12.5 22.5C9.75 22.5 7.5 20.25 7.5 17.5C7.5 14.75 9.75 12.5 12.5 12.5C15.25 12.5 17.5 14.75 17.5 17.5C17.5 20.25 15.25 22.5 12.5 22.5Z" fill="var(--theme-color)"/>
+                                    <path d="M12.5 20C13.8807 20 15 18.8807 15 17.5C15 16.1193 13.8807 15 12.5 15C11.1193 15 10 16.1193 10 17.5C10 18.8807 11.1193 20 12.5 20Z" fill="var(--theme-color)"/>
+                                </svg>                                        
+                            </div>
+                            <div class="navbar-right-desc-details">
+                                <a class="link" href="tel:+2590256215">(629) 555-0129</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="sticky-wrapper">
+            <!-- Main Menu Area -->
+            <div class="menu-area">
+                <div class="container">
+                    <div class="row align-items-center justify-content-between">
+                        
+                        <!-- <div class="col-auto d-lg-none d-block">
+                            <div class="header-logo">
+                                <a href="index.html"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
+                            </div>
+                        </div> -->
+                        <!-- <div class="col-auto d-xl-block d-none header-sticky-none">
+                            <div class="header-logo">
+                                <a href="index.html"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
+                            </div>
+                        </div> -->
+                        <div class="col-auto header-sticky-logo">
+                            <div class="header-logo">
+                                <a href="{% url 'home' %}"><img src="{% static 'logo.png' %}" style="border-radius: 12px;" alt="logo"></a>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <nav class="main-menu d-none d-lg-inline-block">
+                                <ul>
+                                    <li>
+                                        <a href="{% url 'home' %}">Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'about' %}">About</a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'shop' %}">Shop</a>
+                                        <!-- <ul class="sub-menu">
+                                            <li><a href="shop.html">Shop Page</a></li>
+                                            <li><a href="shop-details.html">Shop Details</a></li>
+                                            <li><a href="cart.html">cart</a></li>
+                                        </ul> -->
+                                    </li>
+                                    <!-- <li class="menu-item-has-children">
+                                        <a href="#">Team</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="team.html">Team Page</a></li>
+                                            <li><a href="team-details.html">Team Details</a></li>
+                                        </ul>
+                                    </li>
+                                    
+                                    <li class="menu-item-has-children">
+                                        <a href="#">Blog</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="blog.html">Blog Page</a></li>
+                                            <li><a href="blog-details.html">Blog Details</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="#">Pages</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="team.html">Team Page</a></li>
+                                            <li><a href="team-details.html">Team Details</a></li>
+                                            <li><a href="shop.html">Shop Page</a></li>
+                                            <li><a href="shop-details.html">Shop Details</a></li>
+                                            <li><a href="cart.html">cart</a></li>
+                                            <li><a href="checkout.html">Checkout</a></li>
+                                            <li><a href="wishlist.html">Wishlist</a></li>
+                                        </ul>
+                                    </li>                                     -->
+                                    <li>
+                                        <a href="{% url 'contact' %}">Contact</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="navbar-right d-inline-flex d-lg-none">
+                                <button type="button" class="menu-toggle icon-btn"><i class="fas fa-bars"></i></button>
+                            </div>
+                        </div>
+                        <div class="col-auto d-lg-block d-none header-lg-sticky-none">
+                            <div class="navbar-right-desc">
+                                <div class="icon">
+                                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.625 0C5.375 0 0 2.875 0 6.25V7.125C0 8 0.75 8.625 1.625 8.75H4.875C6 8.75 6.625 7.375 6.25 6.25C5.625 5.375 6.25 4.125 7.25 3.875C10.75 3.125 14.25 3.125 17.875 3.875C19 4.125 19.5 5.25 18.875 6.25C18.5 7.375 19.125 8.625 20.25 8.75H23.5C24.375 8.75 25.125 8 25.125 7.125V6.25C25 2.75 19.5 0 12.625 0Z" fill="var(--theme-color)"/>
+                                        <path d="M19.125 9.375C18.875 9 18.5 8.75 18 8.75H16.25V6.875C16.25 6.5 16 6.25 15.625 6.25H14.375C14 6.25 13.75 6.5 13.75 6.875V8.75H11.25V6.875C11.25 6.5 11 6.25 10.625 6.25H9.375C9 6.25 8.75 6.5 8.75 6.875V8.75H7C6.5 8.75 6.125 9 5.875 9.375C4 12.625 1.25 16.75 1.25 23.75C1.25 24.375 1.75 25 2.5 25H22.5C23.25 25 23.75 24.375 23.75 23.75C23.75 16.75 20.875 12.375 19.125 9.375ZM12.5 22.5C9.75 22.5 7.5 20.25 7.5 17.5C7.5 14.75 9.75 12.5 12.5 12.5C15.25 12.5 17.5 14.75 17.5 17.5C17.5 20.25 15.25 22.5 12.5 22.5Z" fill="var(--theme-color)"/>
+                                        <path d="M12.5 20C13.8807 20 15 18.8807 15 17.5C15 16.1193 13.8807 15 12.5 15C11.1193 15 10 16.1193 10 17.5C10 18.8807 11.1193 20 12.5 20Z" fill="var(--theme-color)"/>
+                                    </svg>                                        
+                                </div>
+                                <div class="navbar-right-desc-details">
+                                    <a class="link" href="tel:+2590256215">(929) 422-4342</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="logo-bg"></div>
+            </div>
+        </div>
+    </header>
+    <!--==============================
+    Hero Area
+    ==============================-->
+    <div class="hero-wrapper" id="hero">
+        <div class="hero-area">
+            <div class="row flex-row-reverse align-items-center">
+                <div class="col-md-12">
+                    <div class="hero-style6">
+                        <!-- <span class="sub-title">Discover Now</span> -->
+                        <h1 class="hero-title">
+                            <span class="word">CLEAN</span> <br>
+                            <span class="word">MINIMAL</span> <br>
+                            <span class="word">DESIGN</span>
+                            <span class="word" style="color: var(--theme-color);">@ EJA STUDIO</span>
+                        </h1>
+                        <div class="btn-group">
+                            <a href="shop.html" class="btn style style-radius">Shop Services</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>                
+        </div>
+        <!--==============================
+        Intro Area  
+        ==============================-->
+            
+        <div class="container">
+            <div class="row gx-30 gy-30">
+                <div class="col-lg-4 col-md-6">
+                    <div class="hero-intro-Cyclingd" style="background-color: #F2F2EF;">
+                        <div class="intro-Cyclingd-img">
+                            <!-- <img src="{% static 'images/feature/feature-3.png' %}" alt="img"> -->
+                        </div>
+                        <div class="intro-Cyclingd-details">
+                            <!-- <h6 class="intro-Cyclingd-subtitle">save up to $5.00</h6> -->
+                            <h4 class="intro-Cyclingd-title"><a href="#">Design Development</a></h4>
+                            <a href="shop.html" class="btn style5 style-radius">Let's Talk<i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="hero-intro-Cyclingd" style="background-color: rgba(221, 76, 100, 0.3);">
+                        <div class="intro-Cyclingd-img">
+                            <!-- <img src="{% static 'images/feature/feature-3.png' %}" alt="img"> -->
+                        </div>
+                        <div class="intro-Cyclingd-details">
+                            <!-- <h6 class="intro-Cyclingd-subtitle">save up to $5.00</h6> -->
+                            <h4 class="intro-Cyclingd-title" style="color: var(--white-color);"><a href="#">Model Making</a></h4>
+                            <a href="shop.html" class="btn style5 style-radius">See Models<i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="hero-intro-Cyclingd bg-theme">
+                        <div class="intro-Cyclingd-img">
+                            <!-- <img src="{% static 'images/feature/feature-3.png' %}" alt="img"> -->
+                        </div>
+                        <div class="intro-Cyclingd-details">
+                            <!-- <h6 class="intro-Cyclingd-subtitle text-white">save up to $5.00</h6> -->
+                            <h4 class="intro-Cyclingd-title text-white"><a href="#">Custom Fabrication</a></h4>
+                            <a href="shop.html" class="btn style5 style-radius">See Samples<i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--======== / Hero Section ========-->
+    <br>
+    <div class="container" style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;
+                                align-items: center; text-align: center;">
+        <div class="row">
+            
+            <div class="sidebar1" style=" border-radius: 10px 0 0 10px; border: var(--theme-color) solid; border-right: 2px;">
+                <ul id="sidebar-options">
+                    <li class="active" style="border-radius: 5px 5px 0 0;" onclick="changeText('Welcome to EJA Studio!', this)">Home</li>
+                    <li onclick="changeText('About EJA Studio - We create clean, minimal designs.', this)">About Us</li>
+                    <li onclick="changeText('Our services include design, branding, and development.', this)">Services</li>
+                    <li style="border-radius: 0 0 5px 5px;" onclick="changeText('Get in touch with us at contact@ejastudio.com', this)">Contact</li>
+                </ul>
+            </div>
+            <div class="content1" style="width: 450px; border-radius: 0 10px 10px 0; border: var(--theme-color) solid; border-left: 2px; background-color: var(--black-color);">
+                <div id="textbox" class="textbox1">
+                    Welcome to EJA Studio!
+                </div>
+            </div>
+        </div>
+    
+        
+    </div>
+    
+
+    <!--==============================
+    About Area  
+    ==============================-->
+    <div class="about-area  space-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-7 col-xl-6">
+                    <div class="about-thumb mb-40 mb-xl-0"> 
+                        <div class="about-img-1">
+                            <img src="{% static 'studio/unit.png' %}" alt="unit model">
+                        </div>
+                        <div class="about-img-2">
+                            <img src="{% static 'studio/massing.gif' %}" style="width: 60%;" alt="massing gif">
+                        </div> 
+                        <div class="about-counter-wrap jump-reverse">
+                            <img src="{% static 'images/icon/about_icon2-1.svg' %}" alt="img">
+                            <h3 class="about-counter"><span class="counter-number">2</span>+</h3>
+                            <h4 class="about-counter-text">Trusted Customers</h4>
+                            <small style="color: white">(VJ included)</small>
+                        </div>
+                        <div class="about-year-wrap2 movingX">
+                            <div class="about-year-grid-wrap">
+                                <div class="icon">
+                                    <img src="{% static 'images/icon/about_icon2-2.png' %}" alt="img">
+                                </div>
+                                <h3 class="about-counter"><span class="counter-number">85,000</span>+</h3>
+                            </div>
+                            <h4 class="about-year-text">Hours of 3D Printing</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-5 col-xl-6">
+                    <div class="about-content-wrap">
+                        <div class="title-area mb-30">
+                            <span class="sub-title">Know About Us</span>
+                            <h2 class="sec-title">Bicycles are our works, but also our passion</h2>
+                            <p class="sec-text">Each of us has our own challenges, goals and reasons to ride. At Probike, our purpose is to help you unleash your full potential no matter the chosen path. We do this with our products, our people and the stories we share. Come feel what it’s like to be limitless. Come ride with us.</p>
+                        </div>
+                        <div class="about-feature-wrap">
+                            <div class="icon">
+                                <i class="fas fa-biking"></i>
+                            </div>
+                            <div class="about-feature-wrap-details">
+                                <h5 class="about-feature-title">Elite Bicycles Service</h5>
+                                <p class="about-feature-text">Et purus duis sollicitudin dignissim habitant. Egestas nulla quis venenatis cras sed </p>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div> 
+    <!--==============================
+    Product Area
+    ==============================-->
+    <div class="product-area space-top bg-black overflow-hidden">
+        <div class="container">
+            <div class="title-area text-center mb-20">
+                <h3 class="sec-title">Featured Products</h3>
+            </div>
+            <div class="portfolio-tab-1 mb-45">
+                <div class="filter-menu-active text-center">
+                    <button data-filter="*" class="active btn style-border3" type="button">Featured Products</button>
+                    <button class="btn style-border3" data-filter=".cat1" type="button">Popular Product </button>
+                    <button class="btn style-border3" data-filter=".cat2" type="button">New Product</button>
+                </div>
+            </div>
+            <div class="row gy-30 gx-30 masonary-active">
+                <div class="col-lg-3 col-sm-6 filter-item cat2">
+                    <div class="product-Cyclingd">
+                        <div class="product-img">
+                            <img src="{% static 'studio/front.png' %}" alt="Product Image">
+                            <span class="tag">
+                                <span class="product-tag">Hot</span>
+                                <span class="offer-tag">-20%</span>
+                            </span>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title"><a href="shop-details.html">Bicycle Bag with Mini Panniers</a></h3>
+                            <span class="star-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="price"><del>$140</del> $250</span>
+                            <a href="#" class="link-btn">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 filter-item cat1">
+                    <div class="product-Cyclingd">
+                        <div class="product-img">
+                            <img src="{% static 'studio/front1.jpg' %}" alt="Product Image">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title"><a href="shop-details.html">
+                                Durable Linen Bench </a></h3>
+                            <span class="star-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="price"><del>$140</del> $250</span>
+                            <a href="#" class="link-btn">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 filter-item cat1">
+                    <div class="product-Cyclingd">
+                        <div class="product-img">
+                            <img src="{% static 'studio/section.png' %}" alt="Product Image">
+                            <span class="tag">
+                                <span class="offer-tag">-20%</span>
+                            </span>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title"><a href="shop-details.html">Heavy Duty Bronze Gloves</a></h3>
+                            <span class="star-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="price"><del>$140</del> $250</span>
+                            <a href="#" class="link-btn">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 filter-item cat2">
+                    <div class="product-Cyclingd">
+                        <div class="product-img">
+                            <img src="{% static 'studio/apt.jpg' %}" alt="Product Image">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title"><a href="shop-details.html">Bell Solar Bike Helmet </a></h3>
+                            <span class="star-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="price"><del>$140</del> $250</span>
+                            <a href="#" class="link-btn">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 filter-item cat1">
+                    <div class="product-Cyclingd">
+                        <div class="product-img">
+                            <img src="{% static 'studio/top.png' %}" alt="Product Image">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title"><a href="shop-details.html">Metro Unisex Cycling Gloves </a></h3>
+                            <span class="star-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="price"><del>$140</del> $250</span>
+                            <a href="#" class="link-btn">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 filter-item cat1">
+                    <div class="product-Cyclingd">
+                        <div class="product-img">
+                            <img src="{% static 'studio/unit.png' %}" alt="Product Image">
+                            <span class="tag">
+                                <span class="product-tag">Hot</span>
+                                <span class="offer-tag">-20%</span>
+                            </span>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title"><a href="shop-details.html">Windshield wiper motor</a></h3>
+                            <span class="star-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="price"><del>$140</del> $250</span>
+                            <a href="#" class="link-btn">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 filter-item cat2">
+                    <div class="product-Cyclingd">
+                        <div class="product-img">
+                            <img src="{% static 'studio/section1.jpg' %}" alt="Product Image">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title"><a href="shop-details.html">Practical Iron Keyboard</a></h3>
+                            <span class="star-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="price"><del>$140</del> $250</span>
+                            <a href="#" class="link-btn">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 filter-item cat2">
+                    <div class="product-Cyclingd">
+                        <div class="product-img">
+                            <img src="{% static 'studio/unit3.jpg' %}" alt="Product Image">
+                            <span class="tag">
+                                <span class="product-tag">Hot</span>
+                                <span class="offer-tag">-20%</span>
+                            </span>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title"><a href="shop-details.html">Practical Iron Keyboard</a></h3>
+                            <span class="star-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="price"><del>$140</del> $250</span>
+                            <a href="#" class="link-btn">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <!--==============================
+    CTA Area  
+    ==============================-->
+    <!-- <div class="cta-area-2">
+        <div class="container">
+            <div class="cta-wrap2 bg-theme">
+                <div class="row justify-content-md-between align-items-center">
+                    <div class="col-lg-7">
+                        <div class="title-area">
+                            <h2 class="sec-title text-white">Subscribe To Stay Connected</h2>
+                            <p class="sec-text text-white">A Bicycle repair is a service provided to fix any issues or damages with vehicle. It a involves diagnosing the problem, repairing o necessary parts</p>
+                        </div>
+                        <form class="newsletter-form style">
+                            <div class="form-group">
+                                <input class="form-control" type="email" placeholder="Your Email Address" required="">
+                            </div>
+                            <button type="submit" class="btn style5">SUBSCRIBE</button>
+                        </form>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="cta2-bg-thumb">
+                            <img src="{% static 'images/service/service-1.png' %}" alt="img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!--==============================
+        Intro Area  
+    ==============================-->
+    <div class="space">
+        <div class="container">
+            <div class="row gx-30 gy-30 filter-active">
+                <div class="col-lg-4 filter-item">
+                    <div class="product-intro-Cyclingd">                        
+                        <div class="intro-Cyclingd-details">
+                            <h6 class="intro-Cyclingd-subtitle">Models</h6>
+                            <h4 class="intro-Cyclingd-title"><a href="#">Unit Project</a></h4>
+                            <a href="shop.html" class="btn style-border2 style-radius" style="z-index: 2;">Unit Project<i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                        <div class="intro-Cyclingd-img">
+                            <img src="{% static 'studio/apt1.jpg' %}" alt="img">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 filter-item">
+                    <div class="product-intro-Cyclingd">                        
+                        <div class="intro-Cyclingd-details">
+                            <h6 class="intro-Cyclingd-subtitle">3D</h6>
+                            <h4 class="intro-Cyclingd-title"><a href="#">Section Stuff</a></h4>
+                            <a href="shop.html" class="btn style-border2 style-radius">Shop<i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                        <div class="intro-Cyclingd-img">
+                            <img src="{% static 'studio/front.png' %}" alt="img">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-12 filter-item">
+                    <div class="product-intro-Cyclingd style">  
+                        <div class="intro-Cyclingd-img">
+                            <img src="{% static 'studio/unit2.jpg' %}" alt="img">
+                        </div>                      
+                        <div class="intro-Cyclingd-details">
+                            <h6 class="intro-Cyclingd-subtitle">Visualisation</h6>
+                            <h4 class="intro-Cyclingd-title"><a href="#">AutoCAD and Other Stuff</a></h4>
+                            <a href="shop.html" class="btn style-border2 style-radius">Chat w/ Us<i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-xl-8 col-lg-12 filter-item">
+                    <div class="product-intro-Cyclingd style3"> 
+                        <div class="intro-Cyclingd-img">
+                            <img src="{% static 'studio/unit3.jpg' %}" alt="img">
+                        </div>                       
+                        <div class="intro-Cyclingd-details">
+                            <h6 class="intro-Cyclingd-subtitle">Design Development</h6>
+                            <h4 class="intro-Cyclingd-title"><a href="#">Creative Design Solutions</a></h4>
+                            <a href="shop.html" class="btn style-border2 style-radius">Let's Create<i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ <!--==============================
+    Pricing plan Area  
+    ==============================-->
+    <!-- <div class="pricing-area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-5 col-lg-7">
+                    <div class="title-area text-center">
+                        <h3 class="sub-title">Our Pricing</h3>
+                        <h2 class="sec-title">It Dependable Bicycle Repair Best Solutions</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row gy-4 justify-content-center">
+                <div class="col-lg-6">
+                    <div class="pricing-Cyclingd">
+                        <div class="pricing-Cyclingd-price-wrap">
+                            <h3 class="pricing-Cyclingd_price"><span class="currency">$</span>29<span class="duration">/month</span></h3>
+                            <div class="pricing-Cyclingd_icon">
+                                <img src="{% static 'images/icon/picing-icon_1-1.svg' %}" alt="img">
+                            </div>
+                        </div>
+                        <div class="pricing-Cyclingd-details">
+                            <h4 class="pricing-Cyclingd_title">Bicycle Cyclinge Clinic</h4>
+                            <div class="checklist style">
+                                <ul>
+                                    <li><i class="fas fa-angle-right"></i>Expert Bicycle Repair Specialists</li>
+                                    <li><i class="fas fa-angle-right"></i>Profession Bicycle Repair Service</li>
+                                    <li><i class="fas fa-angle-right"></i>Quick and Efficient Bicycle Repair</li>
+                                    <li><i class="fas fa-angle-right"></i>Trusted Bicycle Repair</li>
+                                </ul>
+                            </div>
+                            <a class="btn style-border2" href="about.html">Start now <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>                        
+                    </div>                    
+                </div>
+                <div class="col-lg-6">
+                    <div class="pricing-Cyclingd">
+                        <div class="pricing-Cyclingd-price-wrap">
+                            <h3 class="pricing-Cyclingd_price"><span class="currency">$</span>25<span class="duration">/month</span></h3>
+                            <div class="pricing-Cyclingd_icon">
+                                <img src="{% static 'images/icon/picing-icon_1-2.svg' %}" alt="img">
+                            </div>
+                        </div>
+                        <div class="pricing-Cyclingd-details">
+                            <h4 class="pricing-Cyclingd_title">Repair service</h4>
+                            <div class="checklist style">
+                                <ul>
+                                    <li><i class="fas fa-angle-right"></i>Expert Bicycle Repair Specialists</li>
+                                    <li><i class="fas fa-angle-right"></i>Profession Bicycle Repair Service</li>
+                                    <li><i class="fas fa-angle-right"></i>Quick and Efficient Bicycle Repair</li>
+                                    <li><i class="fas fa-angle-right"></i>Trusted Bicycle Repair</li>
+                                </ul>
+                            </div>
+                            <a class="btn style-border2" href="about.html">Start now <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>                        
+                    </div>                    
+                </div>
+                <div class="col-lg-6">
+                    <div class="pricing-Cyclingd">
+                        <div class="pricing-Cyclingd-price-wrap">
+                            <h3 class="pricing-Cyclingd_price"><span class="currency">$</span>30<span class="duration">/month</span></h3>
+                            <div class="pricing-Cyclingd_icon">
+                                <img src="{% static 'images/icon/picing-icon_1-3.svg' %}" alt="img">
+                            </div>
+                        </div>
+                        <div class="pricing-Cyclingd-details">
+                            <h4 class="pricing-Cyclingd_title">Auto Fixers</h4>
+                            <div class="checklist style">
+                                <ul>
+                                    <li><i class="fas fa-angle-right"></i>Expert Bicycle Repair Specialists</li>
+                                    <li><i class="fas fa-angle-right"></i>Profession Bicycle Repair Service</li>
+                                    <li><i class="fas fa-angle-right"></i>Quick and Efficient Bicycle Repair</li>
+                                    <li><i class="fas fa-angle-right"></i>Trusted Bicycle Repair</li>
+                                </ul>
+                            </div>
+                            <a class="btn style-border2" href="about.html">Start now <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>                        
+                    </div>                    
+                </div>
+                <div class="col-lg-6">
+                    <div class="pricing-Cyclingd">
+                        <div class="pricing-Cyclingd-price-wrap">
+                            <h3 class="pricing-Cyclingd_price"><span class="currency">$</span>39<span class="duration">/month</span></h3>
+                            <div class="pricing-Cyclingd_icon">
+                                <img src="{% static 'images/icon/picing-icon_1-4.svg' %}" alt="img">
+                            </div>
+                        </div>
+                        <div class="pricing-Cyclingd-details">
+                            <h4 class="pricing-Cyclingd_title">Pro Auto Fix</h4>
+                            <div class="checklist style">
+                                <ul>
+                                    <li><i class="fas fa-angle-right"></i>Expert Bicycle Repair Specialists</li>
+                                    <li><i class="fas fa-angle-right"></i>Profession Bicycle Repair Service</li>
+                                    <li><i class="fas fa-angle-right"></i>Quick and Efficient Bicycle Repair</li>
+                                    <li><i class="fas fa-angle-right"></i>Trusted Bicycle Repair</li>
+                                </ul>
+                            </div>
+                            <a class="btn style-border2" href="about.html">Start now <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>                        
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!--==============================
+        Testimonial Area  
+    ==============================-->
+        <!-- <div class="testimonial-area-2 overflow-hidden">
+                <div class="row justify-content-end">
+                    <div class="col-lg-7">
+                        <div class="testiomonial-wrap-2 bg-title">
+                            <div class="title-area">
+                                <span class="sub-title">CLIENTS REVIEWS
+                                </span>
+                                <h2 class="sec-title text-white">WHAT OUR CLIENT  SAYS</h2>
+                            </div>
+                            <div class="quote-icon">
+                                <img src="{% static 'img/icon/quote2-1.svg' %}" alt="img">
+                            </div> 
+                            <div class="row global-Cyclingousel testi-slider-2" data-slide-show="1">
+                                <div class="col-lg-6">
+                                    <div class="testi-Cyclingd style2">                                         
+                                        <div class="testi-Cyclingd_content">
+                                            <div class="testi-Cyclingd-profile">
+                                                <div class="testi-profile_thumb">
+                                                    <img src="{% static 'images/testimonial/testimonial-1.png' %}" alt="img">
+                                                </div>
+                                                <div class="testi-Cyclingd-profile-details">
+                                                    <h4 class="testi-profile-title">James Anderson </h4>
+                                                    <span class="testi-profile-desig">Software Engineer</span>                                            
+                                                </div>
+                                            </div>
+                                            <p class="testi-Cyclingd_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                                        </div>                        
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="testi-Cyclingd style2">                                         
+                                        <div class="testi-Cyclingd_content">
+                                            <div class="testi-Cyclingd-profile">
+                                                <div class="testi-profile_thumb">
+                                                    <img src="{% static 'images/testimonial/testimonial-2.png' %}" alt="img">
+                                                </div>
+                                                <div class="testi-Cyclingd-profile-details">
+                                                    <h4 class="testi-profile-title">James Anderson </h4>
+                                                    <span class="testi-profile-desig">Software Engineer</span>                                            
+                                                </div>
+                                            </div>
+                                            <p class="testi-Cyclingd_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                                        </div>                        
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="icon-box">
+                                <button data-slick-prev=".testi-slider-2" class="slick-arrow style3 default"><i class="fas fa-arrow-left"></i></button>
+                                <button data-slick-next=".testi-slider-2" class="slick-arrow style3 default"><i class="fas fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="testimonial-thumb-2">
+                <img src="{% static 'images/testimonial/testimonial-bg.png' %}" alt="img">
+            </div>
+        </div> -->
+
+    <!--==============================
+    FAQ Area  
+    ==============================-->
+    <!-- <div class="faq-area space-bottom">
+        <div class="container">
+            <div class="faq-wrap space" style="background-image: url({% static 'images/update-img/faq-bg.png' %}); background-color: #F4F4F4; background-size: cover;">
+                <div class="row justify-content-center">
+                    <div class="col-xl-5 col-lg-6 col-11">
+                        <div class="title-area text-center">
+                            <span class="sub-title">ask anything</span>
+                            <h2 class="sec-title">Empowering Businesses For A Brighter Future</h2>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-md-10 col-11">
+                        <div class="accordion-area accordion" id="faqAccordion">
+
+                            <div class="accordion-Cyclingd style3 active">
+                                <div class="accordion-header" id="collapse-item-1">
+                                    <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1"> What is the purpose of a business plan?</button>
+                                </div>
+                                <div id="collapse-1" class="accordion-collapse collapse show" aria-labelledby="collapse-item-1" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p class="faq-text">Some essential steps to start a business include conducting market research, creating Some essential steps to start a business.Some essential steps to start a business include conducting market research, creating Some essential steps to start a business.</p>
+                                    </div>
+                                </div>
+                            </div>
+        
+        
+                            <div class="accordion-Cyclingd style3">
+                                <div class="accordion-header" id="collapse-item-2">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2"> How can I register my business name?</button>
+                                </div>
+                                <div id="collapse-2" class="accordion-collapse collapse " aria-labelledby="collapse-item-2" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p class="faq-text">Some essential steps to start a business include conducting market research, creating Some essential steps to start a business.Some essential steps to start a business include conducting market research, creating Some essential steps to start a business.</p>
+                                    </div>
+                                </div>
+                            </div>
+        
+        
+                            <div class="accordion-Cyclingd style3">
+                                <div class="accordion-header" id="collapse-item-3">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3"> How can I protect my intellectual property?</button>
+                                </div>
+                                <div id="collapse-3" class="accordion-collapse collapse " aria-labelledby="collapse-item-3" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p class="faq-text">Some essential steps to start a business include conducting market research, creating Some essential steps to start a business.Some essential steps to start a business include conducting market research, creating Some essential steps to start a business.</p>
+                                    </div>
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+      <!--==============================
+    Team Area  
+    ==============================-->
+    <!-- <div class="team-area">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-6">
+                    <div class="title-area text-center">
+                        <span class="sub-title">Team Member</span>
+                        <h2 class="sec-title">Bicycle  Repair The Best Services</h2>
+                        <p class="sec-text mb-lg-5 mb-4">A Bicycle  repair is a service provided to fix any issues or a damages with your vehicle. It a involves diagnosing the problem, repairing or replacing</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row gx-30 global-Cyclingousel team-slider2" data-slide-show="3" data-md-slide-show="2">
+                <div class="col-lg-6">
+                    <div class="team-Cyclingd style">
+                        <div class="team-Cyclingd_img">
+                            <img src="{% static 'images/team/team-1.jpg' %}" alt="img">
+                        </div>
+                        <div class="team-Cyclingd_content">
+                            <h4 class="team-Cyclingd_title"><a href="team-details.html">Team Member</a>
+                            </h4>
+                            <span class="team-Cyclingd_desig">Software Developer</span>
+                            <div class="team-social_wrap">
+                                <div class="social-btn style">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>                                
+                                </div>
+                            </div>
+                        </div>                            
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="team-Cyclingd style">
+                        <div class="team-Cyclingd_img">
+                            <img src="{% static 'images/team/team-3.jpg' %}" alt="img">
+                        </div>
+                        <div class="team-Cyclingd_content">
+                            <h4 class="team-Cyclingd_title"><a href="team-details.html">Team Member</a>
+                            </h4>
+                            <span class="team-Cyclingd_desig">Software Developer</span>
+                            <div class="team-social_wrap">
+                                <div class="social-btn style">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>                                
+                                </div>
+                            </div>
+                        </div>                            
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="team-Cyclingd style">
+                        <div class="team-Cyclingd_img">
+                            <img src="{% static 'images/team/team-2.jpg' %}" alt="img">
+                        </div>
+                        <div class="team-Cyclingd_content">
+                            <h4 class="team-Cyclingd_title"><a href="team-details.html">Team Member</a>
+                            </h4>
+                            <span class="team-Cyclingd_desig">Software Developer</span>
+                            <div class="team-social_wrap">
+                                <div class="social-btn style">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>                                
+                                </div>
+                            </div>
+                        </div>                            
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="team-Cyclingd style">
+                        <div class="team-Cyclingd_img">
+                            <img src="{% static 'images/team/team-3.jpg' %}" alt="img">
+                        </div>
+                        <div class="team-Cyclingd_content">
+                            <h4 class="team-Cyclingd_title"><a href="team-details.html">Team Member</a>
+                            </h4>
+                            <span class="team-Cyclingd_desig">Software Developer</span>
+                            <div class="team-social_wrap">
+                                <div class="social-btn style">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>                                
+                                </div>
+                            </div>
+                        </div>                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!--==============================
+    Client Area  
+    ==============================-->
+    <!-- <div class="client-area">
+        <div class="container">
+            <div class="row gx-80 gy-4">
+                <div class="col-lg-5">
+                    <div class="client-wrap">
+                        <div class="title-area mb-0">
+                            <span class="sub-title">Logo Brands & Clients</span>
+                            <h2 class="sec-title"> We are Give the Marvelous Cycling Services </h2>
+                            <p class="sec-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="client-slider">
+                        <div class="row global-Cyclingousel slider1" data-slide-show="6" data-lg-slide-show="4" data-md-slide-show="5" data-sm-slide-show="4" data-xs-slide-show="3" data-center-mode="true">
+                            <div class="col-lg-auto">
+                                <div class="client-logo">
+                                    <a href="index.html"><img src="{% static 'images/client/client-1.jpg' %}" alt="img"></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-auto">
+                                <div class="client-logo">
+                                    <a href="index.html"><img src="{% static 'images/client/client-2.jpg' %}" alt="img"></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-auto">
+                                <div class="client-logo">
+                                    <a href="index.html"><img src="{% static 'images/client/client-5.jpg' %}" alt="img"></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-auto">
+                                <div class="client-logo">
+                                    <a href="index.html"><img src="{% static 'images/client/client-2.jpg' %}" alt="img"></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-auto">
+                                <div class="client-logo">
+                                    <a href="index.html"><img src="{% static 'images/client/client-4.jpg' %}" alt="img"></a>
+                                </div>
+                            </div>    
+                            <div class="col-lg-auto">
+                                <div class="client-logo">
+                                    <a href="index.html"><img src="{% static 'images/client/client-3.jpg' %}" alt="img"></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-auto">
+                                <div class="client-logo">
+                                    <a href="index.html"><img src="{% static 'images/client/client-4.jpg' %}" alt="img"></a>
+                                </div>
+                            </div>                            
+                        </div>
+                        <div class="row global-Cyclingousel slider2" data-slide-show="6" data-lg-slide-show="4" data-md-slide-show="5" data-sm-slide-show="4" data-xs-slide-show="3">
+                            <div class="col-lg-auto">
+                                <div class="client-logo">
+                                    <a href="index.html"><img src="{% static 'images/client/client-1.jpg' %}" alt="img"></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-auto">
+                                <div class="client-logo">
+                                    <a href="index.html"><img src="{% static 'images/client/client-2.jpg' %}" alt="img"></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-auto">
+                                <div class="client-logo">
+                                    <a href="index.html"><img src="{% static 'images/client/client-4.jpg' %}" alt="img"></a>
+                                </div>
+                            </div>    
+                            <div class="col-lg-auto">
+                                <div class="client-logo">
+                                    <a href="index.html"><img src="{% static 'images/client/client-5.jpg' %}" alt="img"></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-auto">
+                                <div class="client-logo">
+                                    <a href="index.html"><img src="{% static 'images/client/client-2.jpg' %}" alt="img"></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-auto">
+                                <div class="client-logo">
+                                    <a href="index.html"><img src="{% static 'images/client/client-3.jpg' %}" alt="img"></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-auto">
+                                <div class="client-logo">
+                                    <a href="index.html"><img src="{% static 'images/client/client-4.jpg' %}" alt="img"></a>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>   -->
+     <!--==============================
+        Appointment Area
+     ==============================-->
+        <div class="appointment-area overflow-hidden">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="appointment-form-wrap bg-theme">
+                            <div class="title-area">
+                                <span class="sub-title text-white">Send a request
+                                </span>
+                                <h2 class="sec-title text-white">Our One-Stop Cycling Services Shop</h2>
+                            </div>
+                            <form action="#" method="POST" class="appointment-form ajax-contact">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control style-border2" name="name" id="name" placeholder="Your Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control style-border2" name="email" id="email" placeholder="Email Address">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control style-border2" name="number" id="number" placeholder="Phone Number">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <select name="subject" id="subject" class="form-select style-border2">
+                                                <option value="" disabled selected hidden>Choose a Option</option>
+                                                <option value="">Bicycle  Repair</option>
+                                                <option value="">Bicycle Repair</option>
+                                                <option value="">Buy Bicycle</option>
+                                            </select>
+                                            <i class="fas fa-angle-down text-white"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-12">
+                                    <textarea placeholder="Message here.." id="contactForm" class="form-control style-border2"></textarea>
+                                </div>
+    
+                                <div class="form-btn col-12">
+                                    <button class="btn style3">Appointment Now <i class="fas fa-arrow-right ms-2"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--==============================
+    Blog Area  
+    ==============================-->
+    <!-- <section class="blog-area space">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="title-area text-center">
+                        <span class="sub-title">Blog</span>
+                        <h2 class="sec-title">Strategic Solutions For A Thriving Future</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="blog-Cyclingd style">
+                        <div class="blog-img">
+                            <img src="{% static 'images/blog//blog-1.jpg' %}" alt="blog image">
+                            <div class="blog-date">
+                                <a href="blog.html"><span>17</span>Feb 24</a>
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <a href="blog.html"><i class="fas fa-user"></i>By admin</a>
+                                <a href="blog.html"><i class="fas fa-comments"></i>Comments (05)</a>
+                            </div>
+                            <h3 class="blog-title"><a href="blog-details.html">Step-By-Step Cycling Riding Plan For Success</a></h3>
+                            <a class="link-btn style3" href="blog-details.html">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="blog-Cyclingd style">
+                        <div class="blog-img">
+                            <img src="{% static 'images/blog//blog-5.jpg' %}" alt="blog image">
+                            <div class="blog-date">
+                                <a href="blog.html"><span>17</span>Feb 24</a>
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <a href="blog.html"><i class="fas fa-user"></i>By admin</a>
+                                <a href="blog.html"><i class="fas fa-comments"></i>Comments (05)</a>
+                            </div>
+                            <h3 class="blog-title"><a href="blog-details.html">The Exclusive Cycling Events in This Month</a></h3>
+                            <a class="link-btn style3" href="blog-details.html">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="blog-Cyclingd style">
+                        <div class="blog-img">
+                            <img src="{% static 'images/blog//blog-4.jpg' %}" alt="blog image">
+                            <div class="blog-date">
+                                <a href="blog.html"><span>17</span>Feb 24</a>
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <a href="blog.html"><i class="fas fa-user"></i>By admin</a>
+                                <a href="blog.html"><i class="fas fa-comments"></i>Comments (05)</a>
+                            </div>
+                            <h3 class="blog-title"><a href="blog-details.html">The Exclusive Cycling Events in This Month</a></h3>
+                            <a class="link-btn style3" href="blog-details.html">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>  -->
+    <!-- footer-top -->
+    <!-- <div class="container">
+        <div class="footer-top">
+            <h3 class="footer-top-title text-white">Subscribe our newsletter for updates</h3>
+            <form class="newsletter-form">
+                <div class="form-group">
+                    <input class="form-control" type="email" placeholder="Your Email Address" required="">
+                </div>
+                <button type="submit" class="btn style5"><i class="fas fa-arrow-right"></i></button>
+            </form>
+        </div>
+    </div> -->
+
+    <!--==============================
+        Footer Area
+    ==============================-->
+    <footer class="footer-wrapper footer-layout" style="background-image: url({% static 'images/bg/footer-bg.png' %});">    
+        <div class="container">
+            <div class="widget-area">
+                <div class="row justify-content-between">
+                    <div class="col-md-6 col-xl-3">
+                        <div class="widget footer-widget widget-about">
+                            <div class="footer-logo">
+                                <a href="index.html"><img src="{% static 'logo.png' %}" style="border-radius: 10px;" alt="logo"></a>
+                            </div>
+                            <h3 class="widget_title">About Us</h3>
+                            <p class="footer-text mb-30">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                            <div class="social-btn style3">
+                                <a href="#" tabindex="-1"><i class="fab fa-instagram"></i></a>
+                                <a href="#" tabindex="-1"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" tabindex="-1"><i class="fab fa-youtube"></i></a>                                
+                                <a href="#" tabindex="-1"><i class="fab fa-facebook-f"></i></a>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col-md-6 col-xl-auto">
+                        <div class="widget widget_nav_menu footer-widget">
+                            <h3 class="widget_title">EJA STUDIO</h3>
+                            <div class="menu-all-pages-container">
+                                <ul class="menu">
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="team.html">Team</a></li>
+                                    <li><a href="contact.html">Shop</a></li>
+                                    <li><a href="contact.html">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-auto">
+                        <div class="widget widget_nav_menu footer-widget">
+                            <h3 class="widget_title">Our Services</h3>
+                            <div class="menu-all-pages-container">
+                                <ul class="menu">
+                                    <li><a href="service.html">Model Making</a></li>
+                                    <li><a href="service.html">Design Development</a></li>
+                                    <li><a href="service.html">Custom Fabrications</a></li>
+                                    <li><a href="service.html">Visual Software</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-auto">
+                        <div class="widget footer-widget">
+                            <h3 class="widget_title">Contact</h3>
+                            <div class="widget-contact2">
+                                <div class="widget-contact-grid">
+                                    <div class="icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="contact-grid-details">
+                                        <p>Address</p>
+                                        <h6>Rocky Pt, Bumblefuck, United States</p>
+                                    </div>
+                                </div>
+                                <div class="widget-contact-grid">
+                                    <div class="icon">
+                                        <i class="fas fa-phone-alt"></i>
+                                    </div>
+                                    <div class="contact-grid-details">
+                                        <p>Phone Number</p>
+                                        <h6><a href="tel:123456789">(929) 422 4342</a></p>
+                                    </div>
+                                </div>
+                                <div class="widget-contact-grid">
+                                    <div class="icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="contact-grid-details">
+                                        <p>Email Address</p>
+                                        <h6><a href="mailto:infoname@mail.com">shop@ejastudios.com</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                   
+                </div>
+            </div>
+        </div>
+        <div class="copyright-wrap">
+            <div class="container">
+                <div class="row gy-3 justify-content-md-between justify-content-center">
+                    <div class="col-auto align-self-center"><p class="copyright-text text-center">© <a href="#">Rilow Dev</a> 2024 | All Rights Reserved</p></div>
+                    <div class="col-auto">
+                        <div class="footer-links">
+                            <a href="contact.html">Terms & Conditions</a>
+                            <a href="contact.html">Privacy Policy</a>
+                            <a href="contact.html">Contact Us</a>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </footer>
+
+    <!--********************************
+			Code End  Here 
+	******************************** -->
+
+    <!-- Scroll To Top -->
+    <div class="scroll-top">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
+        </svg>
+    </div>
+
+    <style>
+        /* Style the h1 element */
+        .hero-title {
+            width: 100%;
+            overflow: hidden;
+            max-width: 500px;
+        }
+
+        /* Style each word and apply animation */
+        .hero-title .word {
+            display: inline-block;
+            transform: translateX(-100%);
+            animation: slide-in 2s ease forwards;
+        }
+
+        /* Stagger the animation for each word */
+        .hero-title .word:nth-child(1) {
+            animation-delay: 1s;
+        }
+
+        .hero-title .word:nth-child(2) {
+            animation-delay: 1.5s;
+        }
+
+        .hero-title .word:nth-child(3) {
+            animation-delay: 2s;
+        }
+
+/* Keyframe for sliding in from the left */
+@keyframes slide-in {
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+    </style>
+
+<script>
+    function changeText(newText, element) {
+        // Update the content in the textbox
+        document.getElementById('textbox').innerHTML = newText;
+
+        // Get all the list items
+        var items = document.querySelectorAll('#sidebar-options li');
+
+        // Loop through all the items and remove 'active' class
+        items.forEach(function(item) {
+            item.classList.remove('active');
+        });
+
+        // Add 'active' class to the clicked element
+        element.classList.add('active');
+    }
+</script>
+
+{% endblock %}
