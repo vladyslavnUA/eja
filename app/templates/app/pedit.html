@@ -1,0 +1,124 @@
+{% load static %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+
+<style>
+    body {
+        background-color: #f8f9fa; /* Light background for contrast */
+    }
+    .container {
+        max-width: 800px; /* Center the form */
+        margin: auto; /* Center the container */
+        padding: 20px; /* Add some padding */
+        background: white; /* White background for the form */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+    .image-item {
+        text-align: center; /* Center images and buttons */
+        margin-bottom: 20px; /* Space below each item */
+    }
+    .image-grid {
+        display: grid; /* Use grid for layout */
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+        gap: 20px; /* Space between grid items */
+    }
+    .remove-image {
+        margin-top: 10px; /* Space above delete button */
+    }
+</style>
+
+<div class="container">
+    <h1 class="text-center">Edit Project: {{ project.title }}</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ project_form.as_p }}
+
+        <h2 class="text-center">Additional Images:</h2>
+        <ul id="image-list" class="list-unstyled image-grid">
+            {% for img in project.additional_images.all %}
+                <li class="image-item">
+                    <img src="{{ img.image.url }}" alt="Additional Image" style="width: 150px; height: auto;" />
+                    <input type="hidden" name="existing_images" value="{{ img.id }}">
+                    <button type="button" class="btn btn-danger remove-image">Remove</button>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <div class="form-group">
+            <input type="file" name="additional_images" multiple class="form-control-file">
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-block">Update Project</button>
+    </form>
+</div>
+
+<script>
+    // Draggable functionality
+    const imageList = document.getElementById('image-list');
+    new Sortable(imageList, {
+        animation: 150,
+        handle: '.image-item', // The item to be dragged
+        onEnd: function(evt) {
+            // Handle the order change if needed
+            console.log('Image order changed');
+        },
+    });
+
+    // Remove image functionality
+    document.querySelectorAll('.remove-image').forEach(button => {
+        button.addEventListener('click', function() {
+            const item = this.parentElement;
+            item.remove();
+        });
+    });
+</script>
+
+
+<!-- {% load static %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+
+<h1>Edit Project: {{ project.title }}</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ project_form.as_p }}
+
+    <h2>Additional Images:</h2>
+    <ul id="image-list" class="list-unstyled">
+        {% for img in project.additional_images.all %}
+            <li class="image-item mb-2">
+                <img src="{{ img.image.url }}" alt="Additional Image" style="width: 150px; height: auto;" />
+                <input type="hidden" name="existing_images" value="{{ img.id }}">
+                <button type="button" class="btn btn-danger remove-image">Remove</button>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <div class="form-group">
+        <input type="file" name="additional_images" multiple class="form-control-file">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Update Project</button>
+</form>
+
+<script>
+    // Draggable functionality
+    const imageList = document.getElementById('image-list');
+    new Sortable(imageList, {
+        animation: 150,
+        handle: '.image-item', // The item to be dragged
+        onEnd: function(evt) {
+            // Handle the order change if needed
+            console.log('Image order changed');
+        },
+    });
+
+    // Remove image functionality
+    document.querySelectorAll('.remove-image').forEach(button => {
+        button.addEventListener('click', function() {
+            const item = this.parentElement;
+            item.remove();
+        });
+    });
+</script> -->

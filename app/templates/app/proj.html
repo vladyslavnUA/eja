@@ -1,0 +1,28 @@
+{% if project %}
+    <h2>{{ project.title }}</h2>
+    <p>{{ project.description }}</p>
+    <img src="{{ project.cover_image.url }}" alt="Cover Image" />
+
+    <h3><a href="{% url 'project_detail' project.pk %}">View Project Details</a></h3> <!-- Link to detail page -->
+
+    <h3><a href="{% url 'edit_project' project.pk %}">Edit Details</a></h3>
+
+    <h2>Additional Images:</h2>
+    {% for img in project.additional_images.all %}
+        <img src="{{ img.image.url }}" alt="Additional Image" />
+    {% endfor %}
+    
+    <h3>Additional Images</h3>
+    <div class="additional-images">
+        {% if pics %}
+            {% for image_path in pics %}
+                <a href="{{ image_path }}">{{ image_path }}</a>
+                <img src="{{ MEDIA_URL }}{{ image_path }}" alt="Project Image" style="max-width:200px; margin-right:10px;"/>
+            {% endfor %}
+        {% else %}
+            <p>No additional images.</p>
+        {% endif %}
+    </div>
+{% else %}
+    <h2>Nothing to show</h2>
+{% endif %}
